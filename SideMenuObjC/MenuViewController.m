@@ -10,6 +10,7 @@
 #import "MainViewController.h"
 
 static CGFloat menuWidth = 300.0;
+static NSTimeInterval animationDuration = 0.4;
 
 @interface MenuViewController () <UITableViewDelegate, UITableViewDataSource, MainViewControllerDelegateProtocol >
 
@@ -35,7 +36,7 @@ static CGFloat menuWidth = 300.0;
 
 - (void) didTapPancakeButton:(UIButton *)sender {
     self.leadingConstraint.constant = self.leadingConstraint.constant > 0.0 ? 0.0 : menuWidth;
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:animationDuration animations:^{
         [self.view layoutIfNeeded];
     }];
 }
@@ -70,7 +71,7 @@ static CGFloat menuWidth = 300.0;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.leadingConstraint.constant = 0.0;
     self.mainVC.label.text = self.menuItems[indexPath.row];
-    [UIView animateWithDuration:0.4 animations:^{
+    [UIView animateWithDuration:animationDuration animations:^{
         [self.view layoutIfNeeded];
     }];
 }
