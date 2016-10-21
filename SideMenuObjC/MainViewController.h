@@ -16,6 +16,7 @@
 
 @interface MainViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) id<MainViewControllerDelegateProtocol> delegate ;
 
 @end

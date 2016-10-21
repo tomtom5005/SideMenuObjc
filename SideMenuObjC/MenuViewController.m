@@ -62,6 +62,7 @@ static CGFloat menuWidth = 300.0;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [self.menuTableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.contentView.backgroundColor = [UIColor clearColor];
+    cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.text = self.menuItems[indexPath.row];
     return cell;
 }
@@ -70,6 +71,7 @@ static CGFloat menuWidth = 300.0;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.leadingConstraint.constant = 0.0;
+    self.mainVC.label.text = self.menuItems[indexPath.row];
     [UIView animateWithDuration:0.4 animations:^{
         [self.view layoutIfNeeded];
     }];

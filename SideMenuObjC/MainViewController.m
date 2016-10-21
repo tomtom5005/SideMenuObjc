@@ -11,7 +11,6 @@
 @interface MainViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *pancakeButton;
-@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
