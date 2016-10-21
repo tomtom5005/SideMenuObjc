@@ -18,7 +18,6 @@ static CGFloat menuWidth = 300.0;
 @property (strong, nonatomic) MainViewController *mainVC;
 @property (strong, nonatomic) NSArray *menuItems;
 
-
 @end
 
 @implementation MenuViewController
@@ -35,7 +34,7 @@ static CGFloat menuWidth = 300.0;
 #pragma mark - DashboardViewControllerDelegateProtocol method
 
 - (void) didTapPancakeButton:(UIButton *)sender {
-    self.leadingConstraint.constant = menuWidth;
+    self.leadingConstraint.constant = self.leadingConstraint.constant > 0.0 ? 0.0 : menuWidth;
     [UIView animateWithDuration:0.5 animations:^{
         [self.view layoutIfNeeded];
     }];
@@ -61,7 +60,6 @@ static CGFloat menuWidth = 300.0;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [self.menuTableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.contentView.backgroundColor = [UIColor clearColor];
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.text = self.menuItems[indexPath.row];
     return cell;
