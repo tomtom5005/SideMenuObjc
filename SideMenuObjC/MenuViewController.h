@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  Menu    ViewController.h
 //  SideMenuObjC
 //
 //  Created by Thomas Thompson on 10/21/16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MenuViewController : UIViewController
 
 
 @end
